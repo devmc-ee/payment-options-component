@@ -9,7 +9,8 @@ The component is a part of the [Booking Form app](https://github.com/devmc-ee/de
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Start
+
+## Start to dev
 
 Clone the repository:
 ````git

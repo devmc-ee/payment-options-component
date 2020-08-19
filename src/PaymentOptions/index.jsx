@@ -1,11 +1,14 @@
 import React from 'react';
-import { Field, useFormikContext } from "formik";
-import { TextField } from "formik-material-ui";
-import { MenuItem } from "@material-ui/core";
+import {Field, useFormikContext} from "formik";
+import {TextField} from "formik-material-ui";
+import {MenuItem} from "@material-ui/core";
+import {SETTINGS} from "../DATA";
 
 const PaymentOptions = props => {
+
+	const paymentMethods = SETTINGS.payment;
 	const formik = useFormikContext();
-	const {method} =formik.values.payment;
+	const {method} = formik.values.payment;
 	const helpText = method => {
 		switch (method) {
 			case 'bank':
@@ -37,9 +40,9 @@ const PaymentOptions = props => {
 
 				<MenuItem value="salon">Pay in salon (by cash/ card)</MenuItem>
 				<MenuItem value="bank">Bank transfer (invoice)</MenuItem>
-				<MenuItem value="sportId" >SportID (ticket)</MenuItem>
-				<MenuItem value="giftCard" >Gift Card</MenuItem>
-				<MenuItem value="other"  >Other</MenuItem>
+				<MenuItem value="sportId">SportID (ticket)</MenuItem>
+				<MenuItem value="giftCard">Gift Card</MenuItem>
+				<MenuItem value="other">Other</MenuItem>
 
 			</Field>
 			{}
