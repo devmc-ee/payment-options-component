@@ -1,6 +1,8 @@
 export const SETTINGS = {
+	locale: 'en',
+
 	payment: {
-		methods: [
+		methods:
 			{
 				salon: {
 					name: {
@@ -11,9 +13,7 @@ export const SETTINGS = {
 					},
 					offset: 0 //hours in advance of the appointment date and time
 
-				}
-			},
-			{
+				},
 				bank: {
 					name: {
 						en: "Bank transfer (invoice)"
@@ -22,9 +22,7 @@ export const SETTINGS = {
 						en: "Invoice will be issued for making prepayment via bank transfer"
 					},
 					offset: 5 //hours in advance of the appointment date and time
-				}
-			},
-			{
+				},
 				sportId: {
 					name: {
 						en: "SportID (ticket)"
@@ -33,9 +31,7 @@ export const SETTINGS = {
 						en: "Only SportId tickets are accepted"
 					},
 					offset: 0 //hours in advance of the appointment date and time
-				}
-			},
-			{
+				},
 				giftCard: {
 					name: {
 						en: "Gift Card"
@@ -46,6 +42,6 @@ export const SETTINGS = {
 					offset: 0 //hours in advance of the appointment date and time
 				}
 			}
-		]
+
 	}
 }
