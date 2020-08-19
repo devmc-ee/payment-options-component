@@ -15,11 +15,8 @@ const PaymentOptions = props => {
 				return 'Invoice will be issued for making prepayment via bank transfer';
 			case 'sportId':
 				return 'Only SportId tickets are accepted';
-
 			default:
 				return ''
-
-
 		}
 	};
 	return (

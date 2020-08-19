@@ -8,7 +8,9 @@ export const SETTINGS = {
 					},
 					helperText: {
 						en: ""
-					}
+					},
+					offset: 0 //hours in advance of the appointment date and time
+
 				}
 			},
 			{
@@ -18,11 +20,32 @@ export const SETTINGS = {
 					},
 					helperText: {
 						en: "Invoice will be issued for making prepayment via bank transfer"
-					}
+					},
+					offset: 5 //hours in advance of the appointment date and time
 				}
 			},
-			{sportId: {}},
-			{giftCard: {}}
+			{
+				sportId: {
+					name: {
+						en: "SportID (ticket)"
+					},
+					helperText: {
+						en: "Only SportId tickets are accepted"
+					},
+					offset: 0 //hours in advance of the appointment date and time
+				}
+			},
+			{
+				giftCard: {
+					name: {
+						en: "Gift Card"
+					},
+					helperText: {
+						en: ""
+					},
+					offset: 0 //hours in advance of the appointment date and time
+				}
+			}
 		]
 	}
 }

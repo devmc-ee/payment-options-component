@@ -1,12 +1,16 @@
 import React from 'react';
-import {Formik} from "formik";
+import {Formik, Form} from "formik";
 import PaymentOptions from "./PaymentOptions";
 import './App.css';
 
 function App() {
 	const initialValues = {
+		appointment: {
+			"date": "2020-08-20",
+			"time": "11:30"
+		},
 		payment: {
-			method: 'salon'
+			method: "salon"
 		}
 	};
 	return (
@@ -14,16 +18,16 @@ function App() {
 			<Formik initialValues={initialValues} onSubmit={''}>
 
 				{formik => (
-					<div>
+					<Form>
 						<PaymentOptions/>
 						<pre>
                             {JSON.stringify(
-                                formik.values,
-                                null,
-                                2
-                            )}
+								formik.values,
+								null,
+								2
+							)}
                         </pre>
-					</div>
+					</Form>
 
 				)}
 
