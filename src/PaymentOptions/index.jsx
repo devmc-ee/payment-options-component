@@ -4,18 +4,19 @@ import {TextField} from "formik-material-ui";
 import {MenuItem} from "@material-ui/core";
 import {SETTINGS} from "../DATA";
 
+const {payment, locale} = SETTINGS;
+let methodsItems = [];
+
+for (let i in payment.methods) {
+	console.log('Render')
+	methodsItems.push(
+		<MenuItem key={i} value={i}>{payment.methods[i].name[locale]}</MenuItem>
+	)
+}
+
 const PaymentOptions = props => {
-	const {payment, locale} = SETTINGS;
 	const formik = useFormikContext();
 	const {method} = formik.values.payment; //selected
-	let methodsItems = [];
-
-	for (let i in payment.methods) {
-		console.log('Render')
-		methodsItems.push(
-			<MenuItem key={i} value={i}>{payment.methods[i].name[locale]}</MenuItem>
-		)
-	}
 
 	return (
 		<>
