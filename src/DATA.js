@@ -11,17 +11,23 @@ export const SETTINGS = {
 					helperText: {
 						en: ""
 					},
-					offset: 0 //hours in advance of the appointment date and time
+					offset: 0, //hours in advance of the appointment date and time
+					offsetText:{
+						en: ""
+					}
 
 				},
 				bank: {
 					name: {
-						en: "Bank transfer (invoice)"
+						en: "Bank transfer"
 					},
 					helperText: {
-						en: "Invoice will be issued for making prepayment via bank transfer"
+						en: "Invoice will be sent for proceeding bank transfer"
 					},
-					offset: 5 //hours in advance of the appointment date and time
+					offset: 24, //hours in advance of the appointment date and time
+					offsetText:{
+						en: "(min. %nh in adv.)"
+					}
 				},
 				sportId: {
 					name: {
@@ -30,7 +36,10 @@ export const SETTINGS = {
 					helperText: {
 						en: "Only SportId tickets are accepted"
 					},
-					offset: 0 //hours in advance of the appointment date and time
+					offset: 0, //hours in advance of the appointment date and time
+					offsetText:{
+						en: ""
+					}
 				},
 				giftCard: {
 					name: {
@@ -39,7 +48,10 @@ export const SETTINGS = {
 					helperText: {
 						en: ""
 					},
-					offset: 0 //hours in advance of the appointment date and time
+					offset: 0, //hours in advance of the appointment date and time
+					offsetText:{
+						en: ""
+					}
 				}
 			}
 
