@@ -10,20 +10,20 @@ The component is a part of the [Booking Form app](https://github.com/devmc-ee/de
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 
-## Start to dev
+
+## Start
 
 Clone the repository:
 ````git
 git clone https://github.com/devmc-ee/payment-options-component.git
 ````
 
+## Run 
+
 Install dependencies with yarn:
 ```bash
 yarn install
 ```
-
-
-## Available Scripts
 
 In the project directory, you can run:
 
