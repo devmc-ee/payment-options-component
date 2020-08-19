@@ -3,7 +3,6 @@ import {Formik, Form} from "formik";
 import PaymentSelect from "./PaymentSelect";
 import './App.css';
 
-
 function App() {
 	const initialValues = {
 		appointment: {
