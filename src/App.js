@@ -14,7 +14,17 @@ function App() {
 			<Formik initialValues={initialValues} onSubmit={''}>
 
 				{formik => (
-					<PaymentOptions/>
+					<div>
+						<PaymentOptions/>
+						<pre>
+                            {JSON.stringify(
+                                formik.values,
+                                null,
+                                2
+                            )}
+                        </pre>
+					</div>
+
 				)}
 
 			</Formik>
