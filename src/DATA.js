@@ -14,7 +14,8 @@ export const SETTINGS = {
 					offset: 0, //hours in advance of the appointment date and time
 					offsetText:{
 						en: ""
-					}
+					},
+					addInfo:{}
 
 				},
 				bank: {
@@ -27,7 +28,8 @@ export const SETTINGS = {
 					offset: 24, //hours in advance of the appointment date and time
 					offsetText:{
 						en: "(min. %nh in adv.)"
-					}
+					},
+					addInfo:{}
 				},
 				sportId: {
 					name: {
@@ -39,7 +41,8 @@ export const SETTINGS = {
 					offset: 0, //hours in advance of the appointment date and time
 					offsetText:{
 						en: ""
-					}
+					},
+					addInfo:{}
 				},
 				giftCard: {
 					name: {
@@ -51,9 +54,17 @@ export const SETTINGS = {
 					offset: 0, //hours in advance of the appointment date and time
 					offsetText:{
 						en: ""
+					},
+					addInfo:{
+						label: {
+							en: "GiftCard number"
+						},
+						placeholder:{
+							en: "LTG..."
+						}
 					}
 				}
 			}
 
 	}
-}
+};

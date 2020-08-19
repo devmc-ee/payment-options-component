@@ -10,7 +10,8 @@ function App() {
 			"time": "11:00"
 		},
 		payment: {
-			method: "salon"
+			method: "salon",
+			addInfo: ""
 		}
 	};
 

@@ -1,4 +1,4 @@
-import React, {useMemo} from 'react';
+import React, {useMemo, useEffect} from 'react';
 import {Field, useFormikContext} from "formik";
 import {TextField} from "formik-material-ui";
 import {MenuItem} from "@material-ui/core";
@@ -10,8 +10,18 @@ const PaymentOptions = React.memo(() => {
 	const formik = useFormikContext();
 	const {method} = formik.values.payment; //selected value
 	const {appointment} = formik.values;
+	const values = formik.values;
 
-	const memoMethodItems =  useMemo(()=>{
+	useEffect(() => {
+			if (values.payment.addInfo && Object.keys(payment.methods[method].addInfo).length === 0) {
+				values.payment.addInfo = "";
+				formik.setValues(values);
+			}
+
+		},
+	);
+
+	const memoMethodItems = useMemo(() => {
 		let methodsItems = [];
 		const mAppointment = moment(appointment.date + appointment.time, "YYYY-MM-DD HH:mm")
 		for (let i in payment.methods) {
@@ -24,12 +34,20 @@ const PaymentOptions = React.memo(() => {
 			methodsItems.push(
 				<MenuItem key={i} value={i} disabled={disabled}>
 					{payment.methods[i].name[locale]}
-					{disabled && payment.methods[i].offsetText[locale].replace('%n', payment.methods[i].offset )}
+					{disabled && payment.methods[i].offsetText[locale].replace('%n', payment.methods[i].offset)}
 				</MenuItem>
 			);
 		}
 		return methodsItems;
-	},[locale, payment.methods, appointment]);
+	}, [locale, payment.methods, appointment]);
+
+	const validateHandler = value => {
+		let error;
+		if (!value) {
+			error = "Required!";
+		}
+		return error;
+	};
 
 	return (
 		<>
@@ -47,6 +65,20 @@ const PaymentOptions = React.memo(() => {
 			>
 				{memoMethodItems.map(method => method)}
 			</Field>
+
+			{(Object.keys(payment.methods[method].addInfo).length > 0) &&
+			<Field
+				name={`payment.addInfo`}
+				id={`payment.addInfo`}
+				component={TextField}
+				type="text"
+				variant="standard"
+				label={payment.methods[method].addInfo.label[locale]}
+				placeholder={payment.methods[method].addInfo.placeholder[locale]}
+				fullWidth
+				validate={validateHandler}
+			/>}
+
 		</>
 	)
 });
